@@ -1,0 +1,97 @@
+@import url("colors.css");
+@import url("mediaQueries.css");
+@import url("typography.css");
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.cube {
+    font-size: 4em;
+    width: 600px;
+    height: 600px;
+    margin: 4.5em auto;
+    transform-style: preserve-3d;
+    animation: spinner 10s infinite  linear ;
+    transform-style: preserve-3d;
+}
+
+.side {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    color: white;
+    text-align: center;
+    line-height: 10px;
+}
+
+.front {
+    transform: translateZ(2em);
+    background:url(../1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.top {
+    transform: rotateX(90deg)
+    translateZ(2em);
+    background:url(../2.jpg);
+    background-position: center;
+    background-size: cover;
+   
+}
+.right {
+    transform: rotateY(90deg)
+    translateZ(2em);
+    background:url(../3.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.left {
+    transform: rotateY(-90deg)
+    translateZ(2em);
+    background:url(../4.jpg);
+    background-position: center;
+    background-size: cover;
+   
+}
+
+.bottom {
+    transform: rotateX(-90deg)
+    translateZ(2em);
+    background:url(../5.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.back {
+    transform: rotateY(-180deg)
+    translateZ(2em);
+    background:url(../6.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+@keyframes spinner{
+    0%{
+        transform:rotate3d(1,1,1,0deg);
+    }
+    50%{
+        transform:rotate3d(1,1,1,180deg);
+    }
+    100%{
+        transform:rotate3d(1,1,1,360deg);
+    }
+}
